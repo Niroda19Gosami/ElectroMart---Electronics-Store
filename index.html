@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ElectroMart - Electronics Store</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="topbar bg-dark text-light py-2 small">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-3 align-items-center">
+        <span class="d-none d-md-inline"><i class="bi bi-truck me-1"></i> Free Shipping on orders over ₹999</span>
+        <span class="d-none d-lg-inline"><i class="bi bi-shield-check me-1"></i> 100% Genuine Products</span>
+      </div>
+      <div class="d-flex gap-3 align-items-center">
+        <a class="topbar-link" href="#"><i class="bi bi-geo-alt me-1"></i>Track Order</a>
+        <a class="topbar-link" href="#"><i class="bi bi-headset me-1"></i>Support</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold brand-title" href="index.html">
+        <span class="brand-dot"></span> ElectroMart
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <!-- Left Links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+          <li class="nav-item"><a class="nav-link active" href="index.html#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#deals">Deals</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Search -->
+        <form class="d-flex nav-search" role="search" action="products.html">
+          <input class="form-control" name="q" type="search" placeholder="Search products, brands..." aria-label="Search" />
+          <button class="btn btn-primary" type="submit" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+
+        <!-- Icons -->
+        <div class="d-flex align-items-center gap-3 ms-lg-3 mt-3 mt-lg-0">
+          <a class="icon-btn" href="account.html#wishlist" aria-label="Wishlist">
+            <i class="bi bi-heart"></i>
+          </a>
+
+          <a class="icon-btn position-relative" href="cart.html" aria-label="Cart">
+            <i class="bi bi-cart3"></i>
+            <span class="cart-badge" data-cart-count>2</span>
+          </a>
+
+          <a class="btn btn-outline-dark btn-sm d-flex align-items-center gap-2" href="account.html">
+            <i class="bi bi-person-circle"></i>
+            <span class="d-none d-md-inline">Account</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-section" id="home">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6 reveal">
+          <span class="hero-badge"><i class="bi bi-lightning-charge-fill me-1"></i> New Year Mega Deals</span>
+          <h1 class="hero-title mt-3">Shop Smart Electronics with <span class="text-primary">Premium Quality</span></h1>
+          <p class="hero-desc mt-3">
+            Discover top gadgets, laptops, accessories, smart devices and exclusive deals.
+            Trusted products with fast delivery and easy returns.
+          </p>
+
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <a href="products.html" class="btn btn-primary btn-lg">
+              Explore Products <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+            <a href="#deals" class="btn btn-outline-dark btn-lg">
+              View Deals
+            </a>
+          </div>
+
+          <div class="hero-stats mt-4">
+            <div class="stat-card">
+              <strong>10K+</strong>
+              <span>Happy Customers</span>
+            </div>
+            <div class="stat-card">
+              <strong>1K+</strong>
+              <span>Products</span>
+            </div>
+            <div class="stat-card">
+              <strong>24/7</strong>
+              <span>Support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="hero-media">
+            <img
+              src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop"
+              alt="Electronics Showcase"
+              class="img-fluid rounded-4 hero-img"
+              loading="lazy"
+            />
+            <div class="hero-floating-card shadow-sm">
+              <i class="bi bi-shield-check text-primary"></i>
+              <div>
+                <strong>Secure Payments</strong>
+                <p class="mb-0">UPI • Cards • Wallets</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- CATEGORY -->
+  <section class="section-space" id="categories">
+    <div class="container">
+      <div class="section-head text-center reveal">
+        <h2 class="section-title">Shop by Categories</h2>
+        <p class="section-subtitle">Find what you need in seconds with curated categories.</p>
+      </div>
+
+      <div class="row g-4 mt-2">
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <a href="products.html?cat=smartphones" class="cat-card">
+            <i class="bi bi-phone"></i>
+            <span>Smartphones</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <a href="products.html?cat=laptops" class="cat-card">
+            <i class="bi bi-laptop"></i>
+            <span>Laptops</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <a href="products.html?cat=audio" class="cat-card">
+            <i class="bi bi-headphones"></i>
+            <span>Audio</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <a href="products.html?cat=gaming" class="cat-card">
+            <i class="bi bi-controller"></i>
+            <span>Gaming</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <a href="products.html?cat=wearables" class="cat-card">
+            <i class="bi bi-watch"></i>
+            <span>Wearables</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <a href="products.html?cat=smarthome" class="cat-card">
+            <i class="bi bi-router"></i>
+            <span>Smart Home</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section-space bg-light" id="products">
+    <div class="container">
+      <div class="section-head d-flex align-items-end justify-content-between flex-wrap gap-2 reveal">
+        <div>
+          <h2 class="section-title mb-1">Featured Products</h2>
+          <p class="section-subtitle mb-0">High demand products with best value.</p>
+        </div>
+        <a href="products.html" class="btn btn-outline-dark btn-sm">View All <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+
+      <div class="row g-4 mt-2">
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <div class="card product-card h-100 shadow-sm">
+            <div class="product-media">
+              <span class="product-badge">Hot</span>
+              <a href="product-details.html">
+                <img class="card-img-top"
+                     src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop"
+                     alt="Smartphone"
+                     loading="lazy">
+              </a>
+              <div class="product-actions">
+                <button class="icon-btn-sm" data-quickview aria-label="Quick View"><i class="bi bi-eye"></i></button>
+                <button class="icon-btn-sm" data-wishlist aria-label="Wishlist"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <p class="product-meta mb-1">Smartphones</p>
+              <h5 class="product-title">Nova X Pro 5G (8GB/128GB)</h5>
+              <div class="d-flex align-items-center justify-content-between mt-2">
+                <span class="product-price">₹24,999</span>
+                <span class="product-rating">
+                  <i class="bi bi-star-fill"></i> 4.6
+                </span>
+              </div>
+            </div>
+
+            <div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
+              <button class="btn btn-primary w-100" data-add-to-cart>
+                <i class="bi bi-cart3 me-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <div class="card product-card h-100 shadow-sm">
+            <div class="product-media">
+              <span class="product-badge badge-alt">New</span>
+              <a href="product-details.html">
+                <img class="card-img-top"
+                     src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=800&auto=format&fit=crop"
+                     alt="Laptop"
+                     loading="lazy">
+              </a>
+              <div class="product-actions">
+                <button class="icon-btn-sm" data-quickview><i class="bi bi-eye"></i></button>
+                <button class="icon-btn-sm" data-wishlist><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="product-meta mb-1">Laptops</p>
+              <h5 class="product-title">UltraBook Air 14 (16GB/512GB)</h5>
+              <div class="d-flex align-items-center justify-content-between mt-2">
+                <span class="product-price">₹68,990</span>
+                <span class="product-rating"><i class="bi bi-star-fill"></i> 4.7</span>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
+              <button class="btn btn-primary w-100" data-add-to-cart>
+                <i class="bi bi-cart3 me-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <div class="card product-card h-100 shadow-sm">
+            <div class="product-media">
+              <span class="product-badge">Deal</span>
+              <a href="product-details.html">
+                <img class="card-img-top"
+                     src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=800&auto=format&fit=crop"
+                     alt="Headphones"
+                     loading="lazy">
+              </a>
+              <div class="product-actions">
+                <button class="icon-btn-sm" data-quickview><i class="bi bi-eye"></i></button>
+                <button class="icon-btn-sm" data-wishlist><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="product-meta mb-1">Audio</p>
+              <h5 class="product-title">SoundMax ANC Headphones</h5>
+              <div class="d-flex align-items-center justify-content-between mt-2">
+                <span class="product-price">₹4,499</span>
+                <span class="product-rating"><i class="bi bi-star-fill"></i> 4.4</span>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
+              <button class="btn btn-primary w-100" data-add-to-cart>
+                <i class="bi bi-cart3 me-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <div class="card product-card h-100 shadow-sm">
+            <div class="product-media">
+              <span class="product-badge badge-alt">Pro</span>
+              <a href="product-details.html">
+                <img class="card-img-top"
+                     src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800&auto=format&fit=crop"
+                     alt="Smartwatch"
+                     loading="lazy">
+              </a>
+              <div class="product-actions">
+                <button class="icon-btn-sm" data-quickview><i class="bi bi-eye"></i></button>
+                <button class="icon-btn-sm" data-wishlist><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="product-meta mb-1">Wearables</p>
+              <h5 class="product-title">PulseFit Smartwatch (AMOLED)</h5>
+              <div class="d-flex align-items-center justify-content-between mt-2">
+                <span class="product-price">₹2,899</span>
+                <span class="product-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
+              <button class="btn btn-primary w-100" data-add-to-cart>
+                <i class="bi bi-cart3 me-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DEALS / PROMO -->
+  <section class="section-space" id="deals">
+    <div class="container">
+      <div class="promo-card reveal">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <span class="promo-tag">Limited Time Offer</span>
+            <h2 class="promo-title mt-2">Up to 40% OFF on Gaming Accessories</h2>
+            <p class="promo-desc mb-4">
+              Upgrade your setup with premium controllers, keyboards, mice and headsets.
+              Fast shipping & easy returns.
+            </p>
+            <a href="products.html?cat=gaming" class="btn btn-light btn-lg">
+              Grab Deals <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+          <div class="col-lg-5">
+            <img class="img-fluid rounded-4 promo-img"
+                 src="https://images.unsplash.com/photo-1600861194942-f883de0dfe96?q=80&w=1000&auto=format&fit=crop"
+                 alt="Gaming accessories"
+                 loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section-space bg-light">
+    <div class="container">
+      <div class="newsletter-card reveal">
+        <div class="row align-items-center g-3">
+          <div class="col-lg-7">
+            <h3 class="mb-1">Subscribe & Get Exclusive Offers</h3>
+            <p class="mb-0 text-muted">Get updates on new arrivals, sales and deals directly in your inbox.</p>
+          </div>
+          <div class="col-lg-5">
+            <form class="d-flex gap-2">
+              <input type="email" class="form-control form-control-lg" placeholder="Enter your email">
+              <button type="button" class="btn btn-primary btn-lg">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer bg-dark text-light pt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h4 class="fw-bold brand-title mb-2"><span class="brand-dot"></span> ElectroMart</h4>
+          <p class="text-light-50 mb-3">
+            Premium electronics store for smartphones, laptops, accessories and smart devices.
+            Fast delivery & trusted quality.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-uppercase fw-semibold">Shop</h6>
+          <ul class="footer-links">
+            <li><a href="products.html?cat=smartphones">Smartphones</a></li>
+            <li><a href="products.html?cat=laptops">Laptops</a></li>
+            <li><a href="products.html?cat=audio">Audio</a></li>
+            <li><a href="products.html?cat=gaming">Gaming</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-uppercase fw-semibold">Support</h6>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Warranty</a></li>
+            <li><a href="#">Track Order</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h6 class="text-uppercase fw-semibold">Contact</h6>
+          <ul class="footer-contact">
+            <li><i class="bi bi-geo-alt"></i> Rajkot, Gujarat, India</li>
+            <li><i class="bi bi-envelope"></i> support@electromart.com</li>
+            <li><i class="bi bi-telephone"></i> +91 90000 00000</li>
+          </ul>
+
+          <div class="payment mt-3">
+            <span class="me-2 text-light-50 small">Payments:</span>
+            <i class="bi bi-credit-card-2-front"></i>
+            <i class="bi bi-wallet2"></i>
+            <i class="bi bi-currency-rupee"></i>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-light border-opacity-10 my-4">
+
+      <div class="d-flex justify-content-between flex-wrap gap-2 pb-4 small">
+        <span class="text-light-50">© 2026 ElectroMart. All rights reserved.</span>
+        <span class="text-light-50">Made with Bootstrap v5 • Modern UI</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to Top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Quick View Modal -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Quick View</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-5">
+              <img id="qvImg" class="img-fluid rounded-4" alt="Product preview">
+            </div>
+            <div class="col-md-7">
+              <p class="text-muted mb-1" id="qvCat"></p>
+              <h4 class="fw-bold" id="qvTitle"></h4>
+              <div class="d-flex align-items-center gap-2 mt-2">
+                <span class="h5 mb-0" id="qvPrice"></span>
+                <span class="badge text-bg-light border" id="qvRating"></span>
+              </div>
+              <p class="text-muted mt-3 mb-0">This is a UI-only template. Connect real data via API later.</p>
+              <div class="d-flex gap-2 mt-4">
+                <a href="product-details.html" class="btn btn-outline-dark">Open Details</a>
+                <button class="btn btn-primary" data-add-to-cart><i class="bi bi-cart3 me-2"></i>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

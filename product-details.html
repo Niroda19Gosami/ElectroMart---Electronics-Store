@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Details - ElectroMart</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold brand-title" href="index.html">
+        <span class="brand-dot"></span> ElectroMart
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#deals">Deals</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <form class="d-flex nav-search" role="search" action="products.html">
+          <input class="form-control" name="q" type="search" placeholder="Search products, brands..." aria-label="Search" />
+          <button class="btn btn-primary" type="submit" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+
+        <div class="d-flex align-items-center gap-3 ms-lg-3 mt-3 mt-lg-0">
+          <a class="icon-btn" href="account.html#wishlist" aria-label="Wishlist">
+            <i class="bi bi-heart"></i>
+          </a>
+
+          <a class="icon-btn position-relative" href="cart.html" aria-label="Cart">
+            <i class="bi bi-cart3"></i>
+            <span class="cart-badge" data-cart-count>2</span>
+          </a>
+
+          <a class="btn btn-outline-dark btn-sm d-flex align-items-center gap-2" href="account.html">
+            <i class="bi bi-person-circle"></i>
+            <span class="d-none d-md-inline">Account</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<header class="page-header">
+  <div class="container">
+    <h1 class="section-title mb-1">Product Details</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="products.html">Shop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Details</li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<section class="section-space">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-6 reveal">
+        <div class="card border-0 shadow-sm rounded-4 p-3">
+          <img id="pdMain" class="img-fluid rounded-4"
+               src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop"
+               alt="Product Image" loading="lazy">
+          <div class="d-flex gap-2 mt-3 flex-wrap">
+            <button class="btn btn-outline-dark btn-sm" data-thumb="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">Front</button>
+            <button class="btn btn-outline-dark btn-sm" data-thumb="https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=1200&auto=format&fit=crop">Side</button>
+            <button class="btn btn-outline-dark btn-sm" data-thumb="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=1200&auto=format&fit=crop">Back</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 reveal">
+        <p class="product-meta mb-1">Smartphones</p>
+        <h2 class="fw-bold">Nova X Pro 5G (8GB/128GB)</h2>
+
+        <div class="d-flex align-items-center gap-2 mt-2">
+          <span class="product-rating"><i class="bi bi-star-fill"></i> 4.6</span>
+          <span class="text-muted small">(1,238 reviews)</span>
+          <span class="badge text-bg-light border">In Stock</span>
+        </div>
+
+        <div class="d-flex align-items-center gap-3 mt-3">
+          <span class="h3 mb-0 product-price">₹24,999</span>
+          <span class="text-muted text-decoration-line-through">₹29,999</span>
+          <span class="badge text-bg-success">17% OFF</span>
+        </div>
+
+        <div class="spec-grid mt-4">
+          <div class="spec-item">
+            <span>Processor</span>
+            <strong>Snapdragon 7+</strong>
+          </div>
+          <div class="spec-item">
+            <span>Display</span>
+            <strong>6.6" AMOLED</strong>
+          </div>
+          <div class="spec-item">
+            <span>Battery</span>
+            <strong>5000mAh</strong>
+          </div>
+          <div class="spec-item">
+            <span>Warranty</span>
+            <strong>1 Year</strong>
+          </div>
+        </div>
+
+        <div class="d-flex gap-2 mt-4 flex-wrap">
+          <div class="input-group" style="max-width:180px">
+            <button class="btn btn-outline-dark" type="button" data-qty-minus>-</button>
+            <input type="text" class="form-control text-center" value="1" data-qty>
+            <button class="btn btn-outline-dark" type="button" data-qty-plus>+</button>
+          </div>
+
+          <button class="btn btn-primary btn-lg flex-grow-1" data-add-to-cart>
+            <i class="bi bi-cart3 me-2"></i>Add to Cart
+          </button>
+          <a class="btn btn-outline-dark btn-lg" href="checkout.html">
+            Buy Now
+          </a>
+        </div>
+
+        <div class="d-flex gap-3 mt-3 text-muted small">
+          <span><i class="bi bi-truck me-1"></i> Fast shipping</span>
+          <span><i class="bi bi-arrow-counterclockwise me-1"></i> 7-day return</span>
+          <span><i class="bi bi-shield-check me-1"></i> Secure payment</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12 reveal">
+        <ul class="nav nav-tabs" id="pdTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#desc" type="button">Description</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#specs" type="button">Specifications</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#reviews" type="button">Reviews</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#warranty" type="button">Warranty</button>
+          </li>
+        </ul>
+
+        <div class="tab-content border border-top-0 rounded-bottom-4 p-4 bg-white">
+          <div class="tab-pane fade show active" id="desc">
+            <p class="mb-0 text-muted">
+              Nova X Pro 5G delivers flagship performance with stunning AMOLED display, long battery life, fast charging,
+              and a premium camera system. Built for gaming, work, and everyday productivity.
+            </p>
+          </div>
+          <div class="tab-pane fade" id="specs">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="spec-item">
+                  <span>RAM / Storage</span>
+                  <strong>8GB / 128GB</strong>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="spec-item">
+                  <span>Charging</span>
+                  <strong>65W Fast Charge</strong>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="spec-item">
+                  <span>OS</span>
+                  <strong>Android 15</strong>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="spec-item">
+                  <span>Network</span>
+                  <strong>5G / Dual SIM</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="reviews">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+              <h5 class="fw-bold mb-0">Customer Reviews</h5>
+              <button class="btn btn-outline-dark btn-sm">Write a Review</button>
+            </div>
+            <div class="mt-3">
+              <div class="card border-0 shadow-sm rounded-4 p-3 mb-3">
+                <div class="d-flex justify-content-between">
+                  <strong>Rahul</strong>
+                  <span class="product-rating"><i class="bi bi-star-fill"></i> 5.0</span>
+                </div>
+                <p class="mb-0 text-muted mt-2">Battery and display are amazing. Smooth performance. Great value.</p>
+              </div>
+              <div class="card border-0 shadow-sm rounded-4 p-3">
+                <div class="d-flex justify-content-between">
+                  <strong>Priya</strong>
+                  <span class="product-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                </div>
+                <p class="mb-0 text-muted mt-2">Camera quality is excellent. Delivery was quick.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="warranty">
+            <p class="mb-0 text-muted">
+              1-year standard warranty. Covers manufacturing defects. Physical damage and liquid damage excluded.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <footer class="footer bg-dark text-light pt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h4 class="fw-bold brand-title mb-2"><span class="brand-dot"></span> ElectroMart</h4>
+          <p class="text-light-50 mb-3">
+            Premium electronics store for smartphones, laptops, accessories and smart devices.
+            Fast delivery & trusted quality.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-uppercase fw-semibold">Shop</h6>
+          <ul class="footer-links">
+            <li><a href="products.html?cat=smartphones">Smartphones</a></li>
+            <li><a href="products.html?cat=laptops">Laptops</a></li>
+            <li><a href="products.html?cat=audio">Audio</a></li>
+            <li><a href="products.html?cat=gaming">Gaming</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-uppercase fw-semibold">Support</h6>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Warranty</a></li>
+            <li><a href="#">Track Order</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h6 class="text-uppercase fw-semibold">Contact</h6>
+          <ul class="footer-contact">
+            <li><i class="bi bi-geo-alt"></i> Rajkot, Gujarat, India</li>
+            <li><i class="bi bi-envelope"></i> support@electromart.com</li>
+            <li><i class="bi bi-telephone"></i> +91 90000 00000</li>
+          </ul>
+
+          <div class="payment mt-3">
+            <span class="me-2 text-light-50 small">Payments:</span>
+            <i class="bi bi-credit-card-2-front"></i>
+            <i class="bi bi-wallet2"></i>
+            <i class="bi bi-currency-rupee"></i>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-light border-opacity-10 my-4">
+
+      <div class="d-flex justify-content-between flex-wrap gap-2 pb-4 small">
+        <span class="text-light-50">© 2026 ElectroMart. All rights reserved.</span>
+        <span class="text-light-50">Made with Bootstrap v5 • Modern UI</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to Top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
