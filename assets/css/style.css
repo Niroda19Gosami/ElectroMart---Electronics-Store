@@ -278,11 +278,11 @@ a{ color: inherit; }
 }
 
 /* Footer */
-.footer .text-light-50{ color: rgba(214, 212, 212, 0.65); }
+.footer .text-light-50{ color: rgba(154, 144, 144, 0.65); }
 .footer-links{ list-style:none; padding:0; margin: 10px 0 0; }
 .footer-links li{ margin-bottom: 8px; }
 .footer-links a{ color: rgb(230, 163, 163); text-decoration:none; }
-.footer-links a:hover{ color:#fff; }
+.footer-links a:hover{ color:rgb(57, 240, 221); }
 
 .footer-contact{ 
   list-style:none; 
@@ -293,7 +293,7 @@ a{ color: inherit; }
   display:flex;
   gap: 10px; 
   align-items:center;
-  color: rgba(5, 84, 255, 0.891);
+  color: rgb(255, 255, 255);
   margin-bottom: 10px;
   font-weight: 700;
   letter-spacing:1.5px;
@@ -302,7 +302,7 @@ a{ color: inherit; }
   color: rgb(57, 240, 221); 
   font-weight: 700;
   font-size:16px;
-  background-color: rgba(171, 114, 251, 0.334);
+  background-color: rgba(124, 105, 151, 0.558);
   border-radius: 50px;
   padding: 5px 10px;
 }
@@ -326,7 +326,7 @@ a{ color: inherit; }
   width: 40px;
   height: 40px;
   border-radius: 50px;
-  color:rgba(184, 26, 232, 0.678);
+  color:rgba(9, 19, 49, 0.812);
   display: grid;
   place-items: center;
   box-shadow: 0 10px 25px rgba(27, 13, 135, 0.1), inset 16px 10px 18px rgba(195, 195, 195, 0.304);
@@ -354,7 +354,7 @@ a{ color: inherit; }
   position: absolute;
   inset: -1px;
   border-radius: 50%;
-  background: conic-gradient(rgb(221, 0, 255) var(--scroll), rgba(0,0,0,0) 0%);
+  background:conic-gradient(rgb(0, 183, 255) var(--scroll), rgba(0,0,0,0) 0%);
   /* mask center to form a ring */
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #e51111 calc(100% - 5px));
   mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000000 calc(100% - 5px));
@@ -380,12 +380,26 @@ a{ color: inherit; }
   transform: translateY(0);
 }
 #support-details{
- background: linear-gradient(40deg, rgba(94, 94, 94, 0.662), rgba(11, 193, 248, 0.431));
+ background: linear-gradient(40deg, rgb(255, 255, 255), rgba(11, 193, 248, 0.431));
+ outline: 2px solid rgb(0, 0, 0);
+}
+#support-details ::placeholder{
+  padding: 2px 10px;
+  
 }
 #support-details h5,
-#support-details label{
-  color: rgba(0, 34, 255, 0.782);
+#support-details label
+{
+  color: rgb(26, 15, 48);
   font-weight: 700;
+}
+#support-details i{
+  color:rgb(255, 251, 0);
+  font-weight: 700;
+  background-color:rgb(26, 15, 48);
+}
+#support-details li{
+  color:rgb(35, 14, 82);
 }
 /* Utilities */
 .page-header{
