@@ -54,7 +54,7 @@
 
           <a class="icon-btn position-relative" href="cart.html" aria-label="Cart">
             <i class="bi bi-cart3"></i>
-            <span class="cart-badge" data-cart-count>2</span>
+            <span class="cart-badge" data-cart-count>0</span>
           </a>
 
           <a class="btn btn-outline-dark btn-sm d-flex align-items-center gap-2" href="account.html">
@@ -73,60 +73,60 @@
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
         <li class="breadcrumb-item"><a href="products.html">Shop</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Details</li>
+        <li class="breadcrumb-item active" aria-current="page" data-pd-breadcrumb>Details</li>
       </ol>
     </nav>
   </div>
 </header>
 
-<section class="section-space">
+<section class="section-space" data-product-details-page>
   <div class="container">
     <div class="row g-4">
       <div class="col-lg-6 reveal">
         <div class="card border-0 shadow-sm rounded-4 p-3">
           <img id="pdMain" class="img-fluid rounded-4"
-               src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop"
+               src="assets/images/iPhone_14_Pro_Max_Deep_Purple_PDP.jpg"
                alt="Product Image" loading="lazy">
           <div class="d-flex gap-2 mt-3 flex-wrap">
-            <button class="btn btn-outline-dark btn-sm" data-thumb="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">Front</button>
-            <button class="btn btn-outline-dark btn-sm" data-thumb="https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=1200&auto=format&fit=crop">Side</button>
-            <button class="btn btn-outline-dark btn-sm" data-thumb="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=1200&auto=format&fit=crop">Back</button>
+            <button class="btn btn-outline-dark btn-sm" data-thumb="assets/images/iPhone_14_Pro_Max_Deep_Purple_PDP.jpg">Front</button>
+            <button class="btn btn-outline-dark btn-sm" data-thumb="assets/images/apple-14-mobile.jpg">Side</button>
+            <button class="btn btn-outline-dark btn-sm" data-thumb="assets/images/apple-14-mobile.jpg">Back</button>
           </div>
         </div>
       </div>
 
       <div class="col-lg-6 reveal">
-        <p class="product-meta mb-1">Smartphones</p>
-        <h2 class="fw-bold">Nova X Pro 5G (8GB/128GB)</h2>
+        <p class="product-meta mb-1" data-pd-category>Smartphones</p>
+        <h2 class="fw-bold" data-pd-title>iPhone 14 Pro Max (256GB)</h2>
 
         <div class="d-flex align-items-center gap-2 mt-2">
-          <span class="product-rating"><i class="bi bi-star-fill"></i> 4.6</span>
-          <span class="text-muted small">(1,238 reviews)</span>
-          <span class="badge text-bg-light border">In Stock</span>
+          <span class="product-rating" data-pd-rating><i class="bi bi-star-fill"></i> 4.6</span>
+          <span class="text-muted small" data-pd-reviews>(1,238 reviews)</span>
+          <span class="badge text-bg-light border" data-pd-stock>In Stock</span>
         </div>
 
         <div class="d-flex align-items-center gap-3 mt-3">
-          <span class="h3 mb-0 product-price">₹24,999</span>
-          <span class="text-muted text-decoration-line-through">₹29,999</span>
-          <span class="badge text-bg-success">17% OFF</span>
+          <span class="h3 mb-0 product-price" data-pd-price>&#8377;24,999</span>
+          <span class="text-muted text-decoration-line-through" data-pd-original-price>&#8377;29,999</span>
+          <span class="badge text-bg-success" data-pd-discount>17% OFF</span>
         </div>
 
         <div class="spec-grid mt-4">
           <div class="spec-item">
-            <span>Processor</span>
-            <strong>Snapdragon 7+</strong>
+            <span data-pd-key-spec-label="0">Processor</span>
+            <strong data-pd-key-spec-value="0">Snapdragon 7+</strong>
           </div>
           <div class="spec-item">
-            <span>Display</span>
-            <strong>6.6" AMOLED</strong>
+            <span data-pd-key-spec-label="1">Display</span>
+            <strong data-pd-key-spec-value="1">6.6" AMOLED</strong>
           </div>
           <div class="spec-item">
-            <span>Battery</span>
-            <strong>5000mAh</strong>
+            <span data-pd-key-spec-label="2">Battery</span>
+            <strong data-pd-key-spec-value="2">5000mAh</strong>
           </div>
           <div class="spec-item">
-            <span>Warranty</span>
-            <strong>1 Year</strong>
+            <span data-pd-key-spec-label="3">Warranty</span>
+            <strong data-pd-key-spec-value="3">1 Year</strong>
           </div>
         </div>
 
@@ -140,7 +140,7 @@
           <button class="btn btn-primary btn-lg flex-grow-1" data-add-to-cart>
             <i class="bi bi-cart3 me-2"></i>Add to Cart
           </button>
-          <a class="btn btn-outline-dark btn-lg" href="checkout.html">
+          <a class="btn btn-outline-dark btn-lg" href="checkout.html" data-buy-now>
             Buy Now
           </a>
         </div>
@@ -172,7 +172,7 @@
 
         <div class="tab-content border border-top-0 rounded-bottom-4 p-4 bg-white">
           <div class="tab-pane fade show active" id="desc">
-            <p class="mb-0 text-muted">
+            <p class="mb-0 text-muted" data-pd-description>
               Nova X Pro 5G delivers flagship performance with stunning AMOLED display, long battery life, fast charging,
               and a premium camera system. Built for gaming, work, and everyday productivity.
             </p>
@@ -181,26 +181,26 @@
             <div class="row g-3">
               <div class="col-md-6">
                 <div class="spec-item">
-                  <span>RAM / Storage</span>
-                  <strong>8GB / 128GB</strong>
+                  <span data-pd-spec-label="0">RAM / Storage</span>
+                  <strong data-pd-spec-value="0">8GB / 128GB</strong>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="spec-item">
-                  <span>Charging</span>
-                  <strong>65W Fast Charge</strong>
+                  <span data-pd-spec-label="1">Charging</span>
+                  <strong data-pd-spec-value="1">65W Fast Charge</strong>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="spec-item">
-                  <span>OS</span>
-                  <strong>Android 15</strong>
+                  <span data-pd-spec-label="2">OS</span>
+                  <strong data-pd-spec-value="2">Android 15</strong>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="spec-item">
-                  <span>Network</span>
-                  <strong>5G / Dual SIM</strong>
+                  <span data-pd-spec-label="3">Network</span>
+                  <strong data-pd-spec-value="3">5G / Dual SIM</strong>
                 </div>
               </div>
             </div>
@@ -228,7 +228,7 @@
             </div>
           </div>
           <div class="tab-pane fade" id="warranty">
-            <p class="mb-0 text-muted">
+            <p class="mb-0 text-muted" data-pd-warranty>
               1-year standard warranty. Covers manufacturing defects. Physical damage and liquid damage excluded.
             </p>
           </div>
@@ -238,6 +238,33 @@
 
   </div>
 </section>
+
+<div class="d-none" data-product-catalog>
+  <article data-product-source data-product-id="apple-iphone14-pro-max" data-category="Smartphones" data-title="iPhone 14 Pro Max (256GB)" data-rating="4.8" data-reviews="1286" data-stock="In Stock" data-price="129900" data-original-price="139900" data-image-main="assets/images/iPhone_14_Pro_Max_Deep_Purple_PDP.jpg" data-image-alt1="assets/images/apple-14-mobile.jpg" data-image-alt2="assets/images/apple-14-mobile.jpg" data-key-specs="Processor|A16 Bionic;Display|6.7-inch OLED;Battery|4323mAh;Warranty|1 Year" data-detail-specs="RAM / Storage|6GB / 256GB;Charging|20W Fast Charge;OS|iOS;Network|5G / Dual SIM" data-warranty="1-year brand warranty. Covers manufacturing defects. Physical and liquid damage excluded.">
+    <p data-source-description>Apple iPhone 14 Pro Max gives smooth flagship performance with premium display, pro-level camera quality, long battery life, and secure ecosystem integration for daily productivity.</p>
+  </article>
+  <article data-product-source data-product-id="samsung-galaxy-s24" data-category="Smartphones" data-title="Galaxy S24 (8GB/256GB)" data-rating="4.7" data-reviews="1174" data-stock="In Stock" data-price="84999" data-original-price="94999" data-image-main="assets/images/samsung mobile S24.jpg" data-image-alt1="assets/images/samsung-mobile-1.jpg" data-image-alt2="assets/images/samsung mobile 2.jpg" data-key-specs="Processor|Snapdragon 8 Gen 3;Display|6.2-inch AMOLED;Battery|4000mAh;Warranty|1 Year" data-detail-specs="RAM / Storage|8GB / 256GB;Charging|25W Fast Charge;OS|Android;Network|5G / Dual SIM" data-warranty="1-year Samsung warranty with service support across India.">
+    <p data-source-description>Samsung Galaxy S24 delivers sharp visuals, fast AI-ready performance, and reliable all-day battery backup for work, entertainment, and mobile photography.</p>
+  </article>
+  <article data-product-source data-product-id="vivo-v29" data-category="Smartphones" data-title="V29 5G (12GB/256GB)" data-rating="4.5" data-reviews="943" data-stock="In Stock" data-price="32999" data-original-price="36999" data-image-main="assets/images/vivo v29.jpg" data-image-alt1="assets/images/vivo-mobile.jpg" data-image-alt2="assets/images/vivo mobile 2.jpg" data-key-specs="Processor|Snapdragon 778G;Display|6.78-inch AMOLED;Battery|4600mAh;Warranty|1 Year" data-detail-specs="RAM / Storage|12GB / 256GB;Charging|80W Flash Charge;OS|Android;Network|5G / Dual SIM" data-warranty="1-year Vivo warranty with pickup support in selected cities.">
+    <p data-source-description>Vivo V29 5G is tuned for portrait photography with slim premium design, smooth display, and dependable performance for social media and daily multitasking.</p>
+  </article>
+  <article data-product-source data-product-id="xiaomi-14" data-category="Smartphones" data-title="Xiaomi 14 (12GB/256GB)" data-rating="4.6" data-reviews="1011" data-stock="In Stock" data-price="69999" data-original-price="75999" data-image-main="assets/images/xaomi 14.jpg" data-image-alt1="assets/images/xaomi 14 mobile 2.jpg" data-image-alt2="assets/images/xaomi 14.jpg" data-key-specs="Processor|Snapdragon 8 Gen 3;Display|6.36-inch AMOLED;Battery|4610mAh;Warranty|1 Year" data-detail-specs="RAM / Storage|12GB / 256GB;Charging|90W HyperCharge;OS|Android;Network|5G / Dual SIM" data-warranty="1-year Xiaomi warranty with genuine spare support.">
+    <p data-source-description>Xiaomi 14 balances compact flagship design, strong camera output, bright display, and reliable performance for users who need speed in a pocket-friendly form factor.</p>
+  </article>
+  <article data-product-source data-product-id="asus-rog-zephyrus" data-category="Laptops" data-title="ROG Zephyrus Gaming (16GB/1TB)" data-rating="4.7" data-reviews="682" data-stock="In Stock" data-price="114990" data-original-price="129990" data-image-main="assets/images/asus-rog-gaming.jpg" data-image-alt1="assets/images/asus-rog-gaming-2.jpg" data-image-alt2="assets/images/asus-rog-gaming-3.jpg" data-key-specs="Processor|Intel Core i7;Display|15.6-inch 165Hz;Battery|90Wh;Warranty|1 Year" data-detail-specs="RAM / Storage|16GB / 1TB SSD;Graphics|RTX Series GPU;OS|Windows;Keyboard|RGB Backlit" data-warranty="1-year Asus laptop warranty with optional extended protection plan.">
+    <p data-source-description>Asus ROG Zephyrus is optimized for gaming and heavy workloads with high refresh display, capable thermals, and fast SSD performance for creators and streamers.</p>
+  </article>
+  <article data-product-source data-product-id="hp-pavilion-15" data-category="Laptops" data-title="Pavilion 15 (16GB/512GB SSD)" data-rating="4.4" data-reviews="534" data-stock="In Stock" data-price="62990" data-original-price="69990" data-image-main="assets/images/pavilion-hp.jpg" data-image-alt1="assets/images/con-nb-felicette-23c1-pavilion-15-eh3000-product-image.jpg" data-image-alt2="assets/images/hp paviloin.jpg" data-key-specs="Processor|AMD Ryzen 5;Display|15.6-inch FHD;Battery|41Wh;Warranty|1 Year" data-detail-specs="RAM / Storage|16GB / 512GB SSD;Charging|65W Adapter;OS|Windows;Weight|Approx 1.75kg" data-warranty="1-year HP warranty with on-site support in selected areas.">
+    <p data-source-description>HP Pavilion 15 is a productivity-focused laptop with good battery life, reliable performance, and practical build quality for students and office users.</p>
+  </article>
+  <article data-product-source data-product-id="sony-wh-xb" data-category="Audio" data-title="WH-XB ANC Headphone" data-rating="4.6" data-reviews="774" data-stock="In Stock" data-price="18990" data-original-price="21990" data-image-main="assets/images/sony-headphone.jpg" data-image-alt1="assets/images/sony-headphone.jpg" data-image-alt2="assets/images/sony-headphone.jpg" data-key-specs="Driver|40mm;ANC|Active Noise Canceling;Battery|Up to 30 Hours;Warranty|1 Year" data-detail-specs="Connectivity|Bluetooth 5.2;Charging|USB-C Fast Charge;Mic|Built-in Mic;Weight|Approx 250g" data-warranty="1-year Sony audio warranty. Includes manufacturing defect support.">
+    <p data-source-description>Sony WH-XB ANC Headphone delivers deep bass profile, active noise cancellation, and comfortable over-ear fit for music, calls, and long listening sessions.</p>
+  </article>
+  <article data-product-source data-product-id="amazon-echo-smart" data-category="Smart Home" data-title="Echo Smart Home Speaker" data-rating="4.4" data-reviews="658" data-stock="In Stock" data-price="6999" data-original-price="8999" data-image-main="assets/images/amazon-smart-home.jpg" data-image-alt1="assets/images/smart-home-product.jpg" data-image-alt2="assets/images/smart-home.png" data-key-specs="Assistant|Alexa Voice Support;Audio Output|360 Degree Sound;Connectivity|Wi-Fi / Bluetooth;Warranty|1 Year" data-detail-specs="Compatibility|Android / iOS App;Smart Control|Lights / Plugs / Scenes;Power|AC Adapter;Use Case|Home Automation" data-warranty="1-year smart device warranty with app and cloud support.">
+    <p data-source-description>Amazon Echo Smart Home Speaker helps you automate lights, reminders, music playback, and voice commands with seamless app setup and compact home-friendly design.</p>
+  </article>
+</div>
 
   <footer class="footer bg-dark text-light pt-5">
     <div class="container">
@@ -296,8 +323,8 @@
       <hr class="border-light border-opacity-10 my-4">
 
       <div class="d-flex justify-content-between flex-wrap gap-2 pb-4 small">
-        <span class="text-light-50">© 2026 ElectroMart. All rights reserved.</span>
-        <span class="text-light-50">Made with Bootstrap v5 • Modern UI</span>
+        <span class="text-light-50">Ã‚Â© 2026 ElectroMart. All rights reserved.</span>
+        <span class="text-light-50">Made with Bootstrap v5 Ã¢â‚¬Â¢ Modern UI</span>
       </div>
     </div>
   </footer>

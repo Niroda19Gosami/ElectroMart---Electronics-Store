@@ -54,7 +54,7 @@
 
           <a class="icon-btn position-relative" href="cart.html" aria-label="Cart">
             <i class="bi bi-cart3"></i>
-            <span class="cart-badge" data-cart-count>2</span>
+            <span class="cart-badge" data-cart-count>0</span>
           </a>
 
           <a class="btn btn-outline-dark btn-sm d-flex align-items-center gap-2" href="account.html">
@@ -110,13 +110,13 @@
             <div class="col-md-4">
               <div class="spec-item">
                 <span>Total Orders</span>
-                <strong>12</strong>
+                <strong data-account-total-orders>0</strong>
               </div>
             </div>
             <div class="col-md-4">
               <div class="spec-item">
                 <span>Wishlist</span>
-                <strong>5 Items</strong>
+                <strong data-account-wishlist-count>0 Items</strong>
               </div>
             </div>
             <div class="col-md-4">
@@ -143,20 +143,7 @@
                   <th>Total</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>#EM-1052</td>
-                  <td>Jan 10, 2026</td>
-                  <td><span class="badge text-bg-success">Delivered</span></td>
-                  <td>₹4,499</td>
-                </tr>
-                <tr>
-                  <td>#EM-1041</td>
-                  <td>Dec 22, 2025</td>
-                  <td><span class="badge text-bg-warning">In Transit</span></td>
-                  <td>₹24,999</td>
-                </tr>
-              </tbody>
+              <tbody data-account-orders-body></tbody>
             </table>
           </div>
         </div>
@@ -166,26 +153,8 @@
             <h5 class="fw-bold mb-0">Wishlist</h5>
             <a class="btn btn-primary btn-sm" href="products.html">Add More</a>
           </div>
-          <div class="row g-3 mt-2">
-            <div class="col-md-6">
-              <div class="spec-item d-flex justify-content-between align-items-center">
-                <div>
-                  <span>Nova X Pro 5G</span>
-                  <strong>₹24,999</strong>
-                </div>
-                <button class="btn btn-outline-dark btn-sm" data-add-to-cart>Add to Cart</button>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="spec-item d-flex justify-content-between align-items-center">
-                <div>
-                  <span>PulseFit Smartwatch</span>
-                  <strong>₹2,899</strong>
-                </div>
-                <button class="btn btn-outline-dark btn-sm" data-add-to-cart>Add to Cart</button>
-              </div>
-            </div>
-          </div>
+          <div class="row g-3 mt-2" data-account-wishlist-list></div>
+          <p class="text-muted text-center py-3 mb-0 d-none" data-account-wishlist-empty>Wishlist is empty.</p>
         </div>
 
         <div class="card border-0 shadow-sm rounded-4 p-3 p-lg-4 mt-4 reveal" id="addresses">

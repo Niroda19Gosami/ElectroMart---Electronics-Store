@@ -73,7 +73,7 @@
 
           <a class="icon-btn position-relative" href="cart.html" aria-label="Cart">
             <i class="bi bi-cart3"></i>
-            <span class="cart-badge" data-cart-count>2</span>
+            <span class="cart-badge" data-cart-count>0</span>
           </a>
 
           <a class="btn btn-outline-dark btn-sm d-flex align-items-center gap-2" href="account.html">
@@ -199,20 +199,20 @@
       <div class="section-head d-flex align-items-end justify-content-between flex-wrap gap-2 reveal">
         <div>
           <h2 class="section-title mb-1">Featured Products</h2>
-          <p class="section-subtitle mb-0">High demand products with best value.</p>
+          <p class="section-subtitle mb-0">Handpicked top sellers with premium value and fast delivery.</p>
         </div>
         <a href="products.html" class="btn btn-outline-dark btn-sm">View All <i class="bi bi-arrow-right ms-1"></i></a>
       </div>
 
       <div class="row g-4 mt-2">
         <div class="col-12 col-sm-6 col-lg-3 reveal">
-          <div class="card product-card h-100 shadow-sm">
+          <div class="card product-card h-100 shadow-sm" data-quickview-card data-product-id="samsung-galaxy-s24">
             <div class="product-media">
               <span class="product-badge">Hot</span>
-              <a href="product-details.html">
+              <a href="product-details.html?product=samsung-galaxy-s24" data-quickview data-product-link>
                 <img class="card-img-top"
-                     src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop"
-                     alt="Smartphone"
+                     src="assets/images/samsung mobile S24.jpg"
+                     alt="Samsung Galaxy S24"
                      loading="lazy">
               </a>
               <div class="product-actions">
@@ -223,11 +223,11 @@
 
             <div class="card-body">
               <p class="product-meta mb-1">Smartphones</p>
-              <h5 class="product-title">Nova X Pro 5G (8GB/128GB)</h5>
+              <h5 class="product-title"><a class="text-reset text-decoration-none" href="product-details.html?product=samsung-galaxy-s24" data-quickview data-product-link>Galaxy S24 (8GB/256GB)</a></h5>
               <div class="d-flex align-items-center justify-content-between mt-2">
-                <span class="product-price">₹24,999</span>
+                <span class="product-price">&#8377;84,999</span>
                 <span class="product-rating">
-                  <i class="bi bi-star-fill"></i> 4.6
+                  <i class="bi bi-star-fill"></i> 4.7
                 </span>
               </div>
             </div>
@@ -241,25 +241,87 @@
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3 reveal">
-          <div class="card product-card h-100 shadow-sm">
+          <div class="card product-card h-100 shadow-sm" data-quickview-card data-product-id="vivo-v29">
             <div class="product-media">
               <span class="product-badge badge-alt">New</span>
-              <a href="product-details.html">
+              <a href="product-details.html?product=vivo-v29" data-quickview data-product-link>
                 <img class="card-img-top"
-                     src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=800&auto=format&fit=crop"
-                     alt="Laptop"
+                     src="assets/images/vivo v29.jpg"
+                     alt="Vivo V29"
                      loading="lazy">
               </a>
               <div class="product-actions">
-                <button class="icon-btn-sm" data-quickview><i class="bi bi-eye"></i></button>
-                <button class="icon-btn-sm" data-wishlist><i class="bi bi-heart"></i></button>
+                <button class="icon-btn-sm" data-quickview aria-label="Quick View"><i class="bi bi-eye"></i></button>
+                <button class="icon-btn-sm" data-wishlist aria-label="Wishlist"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="product-meta mb-1">Smartphones</p>
+              <h5 class="product-title"><a class="text-reset text-decoration-none" href="product-details.html?product=vivo-v29" data-quickview data-product-link>V29 5G (12GB/256GB)</a></h5>
+              <div class="d-flex align-items-center justify-content-between mt-2">
+                <span class="product-price">&#8377;32,999</span>
+                <span class="product-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
+              <button class="btn btn-primary w-100" data-add-to-cart>
+                <i class="bi bi-cart3 me-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <div class="card product-card h-100 shadow-sm" data-quickview-card data-product-id="xiaomi-14">
+            <div class="product-media">
+              <span class="product-badge">Deal</span>
+              <a href="product-details.html?product=xiaomi-14" data-quickview data-product-link>
+                <img class="card-img-top"
+                     src="assets/images/xaomi 14.jpg"
+                     alt="Xiaomi 14"
+                     loading="lazy">
+              </a>
+              <div class="product-actions">
+                <button class="icon-btn-sm" data-quickview aria-label="Quick View"><i class="bi bi-eye"></i></button>
+                <button class="icon-btn-sm" data-wishlist aria-label="Wishlist"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="product-meta mb-1">Smartphones</p>
+              <h5 class="product-title"><a class="text-reset text-decoration-none" href="product-details.html?product=xiaomi-14" data-quickview data-product-link>Xiaomi 14 (12GB/256GB)</a></h5>
+              <div class="d-flex align-items-center justify-content-between mt-2">
+                <span class="product-price">&#8377;69,999</span>
+                <span class="product-rating"><i class="bi bi-star-fill"></i> 4.6</span>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
+              <button class="btn btn-primary w-100" data-add-to-cart>
+                <i class="bi bi-cart3 me-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <div class="card product-card h-100 shadow-sm" data-quickview-card data-product-id="asus-rog-zephyrus">
+            <div class="product-media">
+              <span class="product-badge badge-alt">Pro</span>
+              <a href="product-details.html?product=asus-rog-zephyrus" data-quickview data-product-link>
+                <img class="card-img-top"
+                     src="assets/images/asus-rog-gaming-2.jpg"
+                     alt="Asus ROG Gaming laptop"
+                     loading="lazy">
+              </a>
+              <div class="product-actions">
+                <button class="icon-btn-sm" data-quickview aria-label="Quick View"><i class="bi bi-eye"></i></button>
+                <button class="icon-btn-sm" data-wishlist aria-label="Wishlist"><i class="bi bi-heart"></i></button>
               </div>
             </div>
             <div class="card-body">
               <p class="product-meta mb-1">Laptops</p>
-              <h5 class="product-title">UltraBook Air 14 (16GB/512GB)</h5>
+              <h5 class="product-title"><a class="text-reset text-decoration-none" href="product-details.html?product=asus-rog-zephyrus" data-quickview data-product-link>ROG Zephyrus Gaming (16GB/1TB)</a></h5>
               <div class="d-flex align-items-center justify-content-between mt-2">
-                <span class="product-price">₹68,990</span>
+                <span class="product-price">&#8377;114,990</span>
                 <span class="product-rating"><i class="bi bi-star-fill"></i> 4.7</span>
               </div>
             </div>
@@ -272,25 +334,87 @@
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3 reveal">
-          <div class="card product-card h-100 shadow-sm">
+          <div class="card product-card h-100 shadow-sm" data-quickview-card data-product-id="apple-iphone14-pro-max">
             <div class="product-media">
-              <span class="product-badge">Deal</span>
-              <a href="product-details.html">
+              <span class="product-badge">New</span>
+              <a href="product-details.html?product=apple-iphone14-pro-max" data-quickview data-product-link>
                 <img class="card-img-top"
-                     src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=800&auto=format&fit=crop"
-                     alt="Headphones"
+                     src="assets/images/iPhone_14_Pro_Max_Deep_Purple_PDP.jpg"
+                     alt="Apple iPhone 14 Pro Max"
                      loading="lazy">
               </a>
               <div class="product-actions">
-                <button class="icon-btn-sm" data-quickview><i class="bi bi-eye"></i></button>
-                <button class="icon-btn-sm" data-wishlist><i class="bi bi-heart"></i></button>
+                <button class="icon-btn-sm" data-quickview aria-label="Quick View"><i class="bi bi-eye"></i></button>
+                <button class="icon-btn-sm" data-wishlist aria-label="Wishlist"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="product-meta mb-1">Smartphones</p>
+              <h5 class="product-title"><a class="text-reset text-decoration-none" href="product-details.html?product=apple-iphone14-pro-max" data-quickview data-product-link>iPhone 14 Pro Max (256GB)</a></h5>
+              <div class="d-flex align-items-center justify-content-between mt-2">
+                <span class="product-price">&#8377;129,900</span>
+                <span class="product-rating"><i class="bi bi-star-fill"></i> 4.8</span>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
+              <button class="btn btn-primary w-100" data-add-to-cart>
+                <i class="bi bi-cart3 me-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <div class="card product-card h-100 shadow-sm" data-quickview-card data-product-id="sony-wh-xb">
+            <div class="product-media">
+              <span class="product-badge badge-alt">Audio</span>
+              <a href="product-details.html?product=sony-wh-xb" data-quickview data-product-link>
+                <img class="card-img-top"
+                     src="assets/images/sony-headphone.jpg"
+                     alt="Sony WH-XB headphone"
+                     loading="lazy">
+              </a>
+              <div class="product-actions">
+                <button class="icon-btn-sm" data-quickview aria-label="Quick View"><i class="bi bi-eye"></i></button>
+                <button class="icon-btn-sm" data-wishlist aria-label="Wishlist"><i class="bi bi-heart"></i></button>
               </div>
             </div>
             <div class="card-body">
               <p class="product-meta mb-1">Audio</p>
-              <h5 class="product-title">SoundMax ANC Headphones</h5>
+              <h5 class="product-title"><a class="text-reset text-decoration-none" href="product-details.html?product=sony-wh-xb" data-quickview data-product-link>WH-XB ANC Headphone</a></h5>
               <div class="d-flex align-items-center justify-content-between mt-2">
-                <span class="product-price">₹4,499</span>
+                <span class="product-price">&#8377;18,990</span>
+                <span class="product-rating"><i class="bi bi-star-fill"></i> 4.6</span>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
+              <button class="btn btn-primary w-100" data-add-to-cart>
+                <i class="bi bi-cart3 me-2"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal">
+          <div class="card product-card h-100 shadow-sm" data-quickview-card data-product-id="hp-pavilion-15">
+            <div class="product-media">
+              <span class="product-badge">Laptop</span>
+              <a href="product-details.html?product=hp-pavilion-15" data-quickview data-product-link>
+                <img class="card-img-top"
+                     src="assets/images/pavilion-hp.jpg"
+                     alt="HP Pavilion laptop"
+                     loading="lazy">
+              </a>
+              <div class="product-actions">
+                <button class="icon-btn-sm" data-quickview aria-label="Quick View"><i class="bi bi-eye"></i></button>
+                <button class="icon-btn-sm" data-wishlist aria-label="Wishlist"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="product-meta mb-1">Laptops</p>
+              <h5 class="product-title"><a class="text-reset text-decoration-none" href="product-details.html?product=hp-pavilion-15" data-quickview data-product-link>Pavilion 15 (16GB/512GB SSD)</a></h5>
+              <div class="d-flex align-items-center justify-content-between mt-2">
+                <span class="product-price">&#8377;62,990</span>
                 <span class="product-rating"><i class="bi bi-star-fill"></i> 4.4</span>
               </div>
             </div>
@@ -303,26 +427,26 @@
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3 reveal">
-          <div class="card product-card h-100 shadow-sm">
+          <div class="card product-card h-100 shadow-sm" data-quickview-card data-product-id="amazon-echo-smart">
             <div class="product-media">
-              <span class="product-badge badge-alt">Pro</span>
-              <a href="product-details.html">
+              <span class="product-badge badge-alt">Smart Home</span>
+              <a href="product-details.html?product=amazon-echo-smart" data-quickview data-product-link>
                 <img class="card-img-top"
-                     src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800&auto=format&fit=crop"
-                     alt="Smartwatch"
+                     src="assets/images/amazon-smart-home.jpg"
+                     alt="Amazon smart home speaker"
                      loading="lazy">
               </a>
               <div class="product-actions">
-                <button class="icon-btn-sm" data-quickview><i class="bi bi-eye"></i></button>
-                <button class="icon-btn-sm" data-wishlist><i class="bi bi-heart"></i></button>
+                <button class="icon-btn-sm" data-quickview aria-label="Quick View"><i class="bi bi-eye"></i></button>
+                <button class="icon-btn-sm" data-wishlist aria-label="Wishlist"><i class="bi bi-heart"></i></button>
               </div>
             </div>
             <div class="card-body">
-              <p class="product-meta mb-1">Wearables</p>
-              <h5 class="product-title">PulseFit Smartwatch (AMOLED)</h5>
+              <p class="product-meta mb-1">Smart Home</p>
+              <h5 class="product-title"><a class="text-reset text-decoration-none" href="product-details.html?product=amazon-echo-smart" data-quickview data-product-link>Echo Smart Home Speaker</a></h5>
               <div class="d-flex align-items-center justify-content-between mt-2">
-                <span class="product-price">₹2,899</span>
-                <span class="product-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                <span class="product-price">&#8377;6,999</span>
+                <span class="product-rating"><i class="bi bi-star-fill"></i> 4.4</span>
               </div>
             </div>
             <div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
@@ -475,7 +599,7 @@
               </div>
               <p class="text-muted mt-3 mb-0">This is a UI-only template. Connect real data via API later.</p>
               <div class="d-flex gap-2 mt-4">
-                <a href="product-details.html" class="btn btn-outline-dark">Open Details</a>
+                <a href="product-details.html?product=apple-iphone14-pro-max" class="btn btn-outline-dark" data-qv-details>Open Details</a>
                 <button class="btn btn-primary" data-add-to-cart><i class="bi bi-cart3 me-2"></i>Add to Cart</button>
               </div>
             </div>

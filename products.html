@@ -34,7 +34,7 @@
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="products.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link active" href="products.html">Shop</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#categories">Categories</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#deals">Deals</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -54,7 +54,7 @@
 
           <a class="icon-btn position-relative" href="cart.html" aria-label="Cart">
             <i class="bi bi-cart3"></i>
-            <span class="cart-badge" data-cart-count>2</span>
+            <span class="cart-badge" data-cart-count>0</span>
           </a>
 
           <a class="btn btn-outline-dark btn-sm d-flex align-items-center gap-2" href="account.html">
@@ -94,7 +94,12 @@
         <div class="filter-card p-3 p-lg-4 reveal">
           <div class="d-flex justify-content-between align-items-center mb-2">
             <h5 class="fw-bold mb-0">Filters</h5>
-            <button class="btn btn-outline-dark btn-sm" type="button">Reset</button>
+            <button class="btn btn-outline-dark btn-sm" type="button" data-filter-reset>Reset</button>
+          </div>
+
+          <div class="mt-3">
+            <label class="form-label small text-muted mb-1" for="shopSearch">Search in shop</label>
+            <input id="shopSearch" class="form-control form-control-sm" type="search" placeholder="Products or brands" data-filter-search>
           </div>
 
           <div class="accordion mt-3" id="filtersAccordion">
@@ -104,10 +109,12 @@
               </h2>
               <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#filtersAccordion">
                 <div class="accordion-body">
-                  <div class="form-check"><input class="form-check-input" type="checkbox" id="c1"><label class="form-check-label" for="c1">Smartphones</label></div>
-                  <div class="form-check"><input class="form-check-input" type="checkbox" id="c2"><label class="form-check-label" for="c2">Laptops</label></div>
-                  <div class="form-check"><input class="form-check-input" type="checkbox" id="c3"><label class="form-check-label" for="c3">Audio</label></div>
-                  <div class="form-check"><input class="form-check-input" type="checkbox" id="c4"><label class="form-check-label" for="c4">Gaming</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="c1" data-filter-category="smartphones"><label class="form-check-label" for="c1">Smartphones</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="c2" data-filter-category="laptops"><label class="form-check-label" for="c2">Laptops</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="c3" data-filter-category="audio"><label class="form-check-label" for="c3">Audio</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="c4" data-filter-category="gaming"><label class="form-check-label" for="c4">Gaming</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="c5" data-filter-category="wearables"><label class="form-check-label" for="c5">Wearables</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="c6" data-filter-category="smarthome"><label class="form-check-label" for="c6">Smart Home</label></div>
                 </div>
               </div>
             </div>
@@ -118,9 +125,21 @@
               </h2>
               <div id="f2" class="accordion-collapse collapse" data-bs-parent="#filtersAccordion">
                 <div class="accordion-body">
-                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b1"><label class="form-check-label" for="b1">Nova</label></div>
-                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b2"><label class="form-check-label" for="b2">UltraBook</label></div>
-                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b3"><label class="form-check-label" for="b3">SoundMax</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b1" data-filter-brand="apple"><label class="form-check-label" for="b1">Apple</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b2" data-filter-brand="samsung"><label class="form-check-label" for="b2">Samsung</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b3" data-filter-brand="vivo"><label class="form-check-label" for="b3">Vivo</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b4" data-filter-brand="xiaomi"><label class="form-check-label" for="b4">Xiaomi</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b5" data-filter-brand="realme"><label class="form-check-label" for="b5">Realme</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b6" data-filter-brand="asus"><label class="form-check-label" for="b6">Asus</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b7" data-filter-brand="hp"><label class="form-check-label" for="b7">HP</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b8" data-filter-brand="dell"><label class="form-check-label" for="b8">Dell</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b9" data-filter-brand="sony"><label class="form-check-label" for="b9">Sony</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b10" data-filter-brand="boat"><label class="form-check-label" for="b10">boAt</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b11" data-filter-brand="noise"><label class="form-check-label" for="b11">Noise</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b12" data-filter-brand="jbl"><label class="form-check-label" for="b12">JBL</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b13" data-filter-brand="artis"><label class="form-check-label" for="b13">Artis</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b14" data-filter-brand="amazon"><label class="form-check-label" for="b14">Amazon</label></div>
+                  <div class="form-check"><input class="form-check-input" type="checkbox" id="b15" data-filter-brand="nova"><label class="form-check-label" for="b15">Nova</label></div>
                 </div>
               </div>
             </div>
@@ -131,9 +150,12 @@
               </h2>
               <div id="f3" class="accordion-collapse collapse" data-bs-parent="#filtersAccordion">
                 <div class="accordion-body">
-                  <label class="form-label">Max Price</label>
-                  <input type="range" class="form-range" min="1000" max="200000" step="500" value="80000">
-                  <div class="d-flex justify-content-between small text-muted"><span>₹1K</span><span>₹2L</span></div>
+                  <label class="form-label d-flex justify-content-between align-items-center">
+                    <span>Max Price</span>
+                    <span class="fw-semibold" data-filter-price-value>&#8377;150,000</span>
+                  </label>
+                  <input type="range" class="form-range" min="1000" max="150000" step="500" value="150000" data-filter-price>
+                  <div class="d-flex justify-content-between small text-muted"><span>&#8377;1K</span><span>&#8377;1.5L</span></div>
                 </div>
               </div>
             </div>
@@ -144,48 +166,112 @@
               </h2>
               <div id="f4" class="accordion-collapse collapse" data-bs-parent="#filtersAccordion">
                 <div class="accordion-body">
-                  <div class="form-check"><input class="form-check-input" type="radio" name="r" id="r1"><label class="form-check-label" for="r1">4★ & above</label></div>
-                  <div class="form-check"><input class="form-check-input" type="radio" name="r" id="r2"><label class="form-check-label" for="r2">3★ & above</label></div>
+                  <div class="form-check"><input class="form-check-input" type="radio" name="ratingFilter" id="r0" value="0" data-filter-rating checked><label class="form-check-label" for="r0">All Ratings</label></div>
+                  <div class="form-check"><input class="form-check-input" type="radio" name="ratingFilter" id="r1" value="4.5" data-filter-rating><label class="form-check-label" for="r1">4.5&#9733; & above</label></div>
+                  <div class="form-check"><input class="form-check-input" type="radio" name="ratingFilter" id="r2" value="4" data-filter-rating><label class="form-check-label" for="r2">4&#9733; & above</label></div>
+                  <div class="form-check"><input class="form-check-input" type="radio" name="ratingFilter" id="r3" value="3.5" data-filter-rating><label class="form-check-label" for="r3">3.5&#9733; & above</label></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <button class="btn btn-primary w-100 mt-3">Apply Filters</button>
+          <button class="btn btn-primary w-100 mt-3" type="button" data-filter-apply>Apply Filters</button>
         </div>
       </aside>
 
       <!-- Product Grid -->
       <div class="col-lg-9">
-        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 reveal">
-          <p class="mb-0 text-muted">Showing <strong>12</strong> products</p>
-          <div class="d-flex gap-2">
-            <select class="form-select form-select-sm" style="max-width:220px">
-              <option>Sort: Recommended</option>
-              <option>Price: Low to High</option>
-              <option>Price: High to Low</option>
-              <option>Newest</option>
-              <option>Top Rated</option>
-            </select>
-            <button class="btn btn-outline-dark btn-sm"><i class="bi bi-grid"></i></button>
-            <button class="btn btn-outline-dark btn-sm"><i class="bi bi-list"></i></button>
+        <div class="brand-strip reveal">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <h5 class="fw-bold mb-0">Shop by Brand</h5>
+            <span class="text-muted small">Tap a brand to filter instantly</span>
+          </div>
+          <div class="brand-strip-grid">
+            <button class="brand-tile" type="button" data-brand-chip="apple">
+              <img src="assets/images/apple-watch.jpg" alt="Apple products" loading="lazy">
+              <span>Apple</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="samsung">
+              <img src="assets/images/samsung mobile S24.jpg" alt="Samsung products" loading="lazy">
+              <span>Samsung</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="vivo">
+              <img src="assets/images/vivo v29.jpg" alt="Vivo products" loading="lazy">
+              <span>Vivo</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="xiaomi">
+              <img src="assets/images/xaomi 14.jpg" alt="Xiaomi products" loading="lazy">
+              <span>Xiaomi</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="realme">
+              <img src="assets/images/realme-narzo-60-pro-5g-unbox-triveni-world-1.jpg" alt="Realme products" loading="lazy">
+              <span>Realme</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="asus">
+              <img src="assets/images/asus-rog-gaming-2.jpg" alt="Asus products" loading="lazy">
+              <span>Asus</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="hp">
+              <img src="assets/images/pavilion-hp.jpg" alt="HP products" loading="lazy">
+              <span>HP</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="dell">
+              <img src="assets/images/xs9320t-cnb-00005ff090-sl-oled.jpg" alt="Dell products" loading="lazy">
+              <span>Dell</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="sony">
+              <img src="assets/images/sony-headphone.jpg" alt="Sony products" loading="lazy">
+              <span>Sony</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="boat">
+              <img src="assets/images/boat-earpods-2.jpg" alt="boAt products" loading="lazy">
+              <span>boAt</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="noise">
+              <img src="assets/images/noise-watch-2.jpg" alt="Noise products" loading="lazy">
+              <span>Noise</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="jbl">
+              <img src="assets/images/jbl-audio-system.jpg" alt="JBL products" loading="lazy">
+              <span>JBL</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="artis">
+              <img src="assets/images/artis-audio.jpg" alt="Artis products" loading="lazy">
+              <span>Artis</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="amazon">
+              <img src="assets/images/amazon-smart-home.jpg" alt="Amazon products" loading="lazy">
+              <span>Amazon</span>
+            </button>
+            <button class="brand-tile" type="button" data-brand-chip="nova">
+              <img src="assets/images/Nova-mobile.jpg" alt="Nova products" loading="lazy">
+              <span>Nova</span>
+            </button>
           </div>
         </div>
 
-        <div class="row g-4 mt-2">
-          <!-- 8 product cards -->
-          
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 reveal">
+          <p class="mb-0 text-muted">Showing <strong data-product-count>0</strong> products</p>
+          <div class="d-flex gap-2">
+            <select class="form-select form-select-sm" style="max-width:220px" data-sort-products>
+              <option value="recommended">Sort: Recommended</option>
+              <option value="price-low-high">Price: Low to High</option>
+              <option value="price-high-low">Price: High to Low</option>
+              <option value="rating-high-low">Top Rated</option>
+              <option value="newest">Newest</option>
+            </select>
+          </div>
         </div>
 
-        <nav class="mt-4 reveal" aria-label="Pagination">
-          <ul class="pagination justify-content-center">
-            <li class="page-item disabled"><span class="page-link">Prev</span></li>
-            <li class="page-item active"><span class="page-link">1</span></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </nav>
+        <div class="row g-4 mt-2" data-products-grid data-auto-products>
+          <!-- Product cards are rendered from assets/images list in assets/js/script.js -->
+        </div>
+
+        <div class="shop-empty card border-0 shadow-sm p-4 text-center d-none mt-4" data-empty-state>
+          <h5 class="fw-bold mb-1">No products matched your filters</h5>
+          <p class="text-muted mb-3">Try resetting filters or increasing your max price range.</p>
+          <button class="btn btn-outline-dark btn-sm mx-auto" type="button" data-filter-reset>Reset Filters</button>
+        </div>
       </div>
     </div>
   </div>
