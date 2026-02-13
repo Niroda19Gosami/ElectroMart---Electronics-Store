@@ -86,30 +86,30 @@
         <div class="card border-0 shadow-sm rounded-4 p-3 p-lg-4">
           <h5 class="fw-bold mb-3">Shipping Details</h5>
 
-          <div class="row g-3">
+          <div class="row g-3" data-checkout-shipping>
             <div class="col-md-6">
-              <label class="form-label">Full Name</label>
-              <input class="form-control" placeholder="Enter name">
+              <label class="form-label" for="checkoutName">Full Name</label>
+              <input id="checkoutName" class="form-control" type="text" placeholder="Enter name" autocomplete="name" required minlength="2" data-shipping-field data-shipping-type="name">
             </div>
             <div class="col-md-6">
-              <label class="form-label">Phone</label>
-              <input class="form-control" placeholder="+91">
+              <label class="form-label" for="checkoutPhone">Phone</label>
+              <input id="checkoutPhone" class="form-control" type="tel" inputmode="numeric" placeholder="+91" autocomplete="tel" required data-shipping-field data-shipping-type="phone">
             </div>
             <div class="col-12">
-              <label class="form-label">Address</label>
-              <input class="form-control" placeholder="House no, street, area">
+              <label class="form-label" for="checkoutAddress">Address</label>
+              <input id="checkoutAddress" class="form-control" type="text" placeholder="House no, street, area" autocomplete="street-address" required minlength="5" data-shipping-field data-shipping-type="address">
             </div>
             <div class="col-md-6">
-              <label class="form-label">City</label>
-              <input class="form-control" placeholder="City">
+              <label class="form-label" for="checkoutCity">City</label>
+              <input id="checkoutCity" class="form-control" type="text" placeholder="City" autocomplete="address-level2" required minlength="2" data-shipping-field data-shipping-type="city">
             </div>
             <div class="col-md-3">
-              <label class="form-label">State</label>
-              <input class="form-control" placeholder="State">
+              <label class="form-label" for="checkoutState">State</label>
+              <input id="checkoutState" class="form-control" type="text" placeholder="State" autocomplete="address-level1" required minlength="2" data-shipping-field data-shipping-type="state">
             </div>
             <div class="col-md-3">
-              <label class="form-label">PIN</label>
-              <input class="form-control" placeholder="PIN">
+              <label class="form-label" for="checkoutPin">PIN</label>
+              <input id="checkoutPin" class="form-control" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="PIN" autocomplete="postal-code" required data-shipping-field data-shipping-type="pin">
             </div>
           </div>
 
@@ -164,7 +164,7 @@
             <strong class="h5 mb-0">₹28,998</strong>
           </div>
 
-          <button class="btn btn-primary btn-lg w-100 mt-4" type="button" data-place-order>
+          <button class="btn btn-primary btn-lg w-100 mt-4 disabled" type="button" data-place-order disabled aria-disabled="true">
             Place Order <i class="bi bi-check2 ms-2"></i>
           </button>
 

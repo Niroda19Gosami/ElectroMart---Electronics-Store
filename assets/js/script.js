@@ -444,14 +444,19 @@
 
     var orders = readOrders();
     if(!orders.length){
-      tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted py-3">No recent orders yet.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted py-3">No order history.</td></tr>';
       return;
     }
 
     tbody.innerHTML = orders.slice(0, 10).map(function(order){
       return [
         "<tr>",
-        "  <td><div><strong>" + escapeHtml(order.orderId) + "</strong></div><div class=\"small text-muted\">" + escapeHtml(order.title) + "</div></td>",
+        "  <td>",
+        "    <div class=\"d-flex justify-content-between align-items-start gap-2\">",
+        "      <div><strong>" + escapeHtml(order.orderId) + "</strong><div class=\"small text-muted\">" + escapeHtml(order.title) + "</div></div>",
+        '      <button class="btn btn-outline-danger btn-sm" type="button" data-account-order-remove="' + escapeHtml(order.orderId) + '" aria-label="Remove order history"><i class="bi bi-x-lg"></i></button>',
+        "    </div>",
+        "  </td>",
         "  <td>" + escapeHtml(order.date) + "</td>",
         "  <td><span class=\"badge text-bg-success\">Delivered</span></td>",
         "  <td>" + formatPrice(order.total) + "</td>",
@@ -583,6 +588,98 @@
     }
   }
 
+  function getCheckoutShippingFields(){
+    return qsa("[data-checkout-shipping] [data-shipping-field]");
+  }
+
+  function isShippingFieldValid(field){
+    if(!field) return false;
+    var value = String(field.value || "").trim();
+    if(!value) return false;
+
+    var kind = field.getAttribute("data-shipping-type") || "";
+    if(kind === "phone"){
+      var digits = value.replace(/\D/g, "");
+      return digits.length >= 10 && digits.length <= 12;
+    }
+    if(kind === "pin"){
+      return /^\d{6}$/.test(value);
+    }
+    if(kind === "name"){
+      return /^[A-Za-z][A-Za-z\s.'-]{1,}$/.test(value);
+    }
+    if(kind === "address"){
+      return value.length >= 5;
+    }
+    if(kind === "city" || kind === "state"){
+      return /^[A-Za-z][A-Za-z\s.'-]{1,}$/.test(value);
+    }
+    if(typeof field.checkValidity === "function" && !field.checkValidity()) return false;
+    return true;
+  }
+
+  function isCheckoutShippingValid(markInvalid){
+    var fields = getCheckoutShippingFields();
+    if(!fields.length) return true;
+
+    var firstInvalid = null;
+    var allValid = true;
+    fields.forEach(function(field){
+      var valid = isShippingFieldValid(field);
+      if(markInvalid) field.classList.toggle("is-invalid", !valid);
+      if(!valid && !firstInvalid) firstInvalid = field;
+      if(!valid) allValid = false;
+    });
+
+    if(markInvalid && firstInvalid) firstInvalid.focus();
+    return allValid;
+  }
+
+  function syncCheckoutPlaceOrderState(){
+    var placeOrderBtn = qs("[data-place-order]");
+    if(!placeOrderBtn) return;
+
+    var canPlace = isCheckoutShippingValid(false);
+
+    placeOrderBtn.disabled = !canPlace;
+    placeOrderBtn.classList.toggle("disabled", !canPlace);
+    if(canPlace) placeOrderBtn.removeAttribute("aria-disabled");
+    else placeOrderBtn.setAttribute("aria-disabled", "true");
+  }
+
+  function initCheckoutFormValidation(){
+    var fields = getCheckoutShippingFields();
+    if(!fields.length) return;
+
+    fields.forEach(function(field){
+      var shippingType = field.getAttribute("data-shipping-type") || "";
+      if(shippingType === "phone" || shippingType === "pin"){
+        field.addEventListener("input", function(){
+          var raw = String(field.value || "");
+          if(shippingType === "phone"){
+            var sanitized = raw.replace(/[^\d+]/g, "");
+            sanitized = sanitized.replace(/\+/g, function(match, idx){ return idx === 0 ? "+" : ""; });
+            field.value = sanitized;
+            return;
+          }
+          field.value = raw.replace(/\D/g, "").slice(0, 6);
+        });
+      }
+      field.addEventListener("input", function(){
+        field.classList.remove("is-invalid");
+        syncCheckoutPlaceOrderState();
+      });
+      field.addEventListener("change", syncCheckoutPlaceOrderState);
+      field.addEventListener("blur", function(){
+        if(String(field.value || "").trim()){
+          field.classList.toggle("is-invalid", !isShippingFieldValid(field));
+        }
+      });
+    });
+
+    syncCheckoutPlaceOrderState();
+  }
+
   // Scroll Top Button
   var scrollTopBtn = qs("#scrollTopBtn");
 
@@ -654,6 +751,7 @@
   setCartCount(getCartCount(readCart()));
   syncWishlistButtons();
   renderAccountSection();
+  initCheckoutFormValidation();
 
   // Add to Cart buttons
   document.addEventListener("click", function(event){
@@ -664,6 +762,7 @@
       showAddFeedback(btn);
       renderCartPage();
       renderAccountSection();
+      syncCheckoutPlaceOrderState();
     }
   });
 
@@ -688,15 +787,12 @@
     renderAccountSection();
   });
 
-  // Place order from cart/checkout and update account recent orders
+  // Cart checkout should navigate to checkout; only checkout place-order creates the order.
   document.addEventListener("click", function(event){
     var cartCheckout = event.target.closest("[data-cart-checkout]");
     if(cartCheckout){
-      event.preventDefault();
-      if(placeOrderFromCart()){
-        renderCartPage();
-        renderAccountSection();
-        window.location.href = "account.html#orders";
+      if(cartCheckout.classList.contains("disabled") || cartCheckout.getAttribute("aria-disabled") === "true"){
+        event.preventDefault();
       }
       return;
     }
@@ -704,15 +800,44 @@
     var placeOrderBtn = event.target.closest("[data-place-order]");
     if(!placeOrderBtn) return;
     event.preventDefault();
+
+    if(!readCart().length){
+      syncCheckoutPlaceOrderState();
+      window.alert("Your cart is empty. Add products before placing the order.");
+      return;
+    }
+
+    if(!isCheckoutShippingValid(true)){
+      syncCheckoutPlaceOrderState();
+      window.alert("Please fill valid shipping details before placing the order.");
+      return;
+    }
+
     if(placeOrderFromCart()){
       renderCartPage();
       renderAccountSection();
-      window.location.href = "account.html#orders";
+      placeOrderBtn.innerHTML = 'Order placed <i class="bi bi-check2 ms-2"></i>';
+      placeOrderBtn.disabled = true;
+      placeOrderBtn.classList.add("disabled");
+      placeOrderBtn.setAttribute("aria-disabled", "true");
     }
   });
 
   // Account wishlist actions
   document.addEventListener("click", function(event){
+    var removeOrderBtn = event.target.closest("[data-account-order-remove]");
+    if(removeOrderBtn){
+      var removeOrderId = removeOrderBtn.getAttribute("data-account-order-remove");
+      if(removeOrderId){
+        var remainingOrders = readOrders().filter(function(entry){
+          return entry.orderId !== removeOrderId;
+        });
+        writeOrders(remainingOrders);
+        renderAccountSection();
+      }
+      return;
+    }
+
     var removeBtn = event.target.closest("[data-account-wishlist-remove]");
     if(removeBtn){
       var removeId = removeBtn.getAttribute("data-account-wishlist-remove");
@@ -730,6 +855,7 @@
     if(addProductToCart(item, 1)){
       showAddFeedback(addBtn);
       renderCartPage();
+      syncCheckoutPlaceOrderState();
     }
   });
 
@@ -823,6 +949,7 @@
 
     writeCart(items);
     renderCartPage();
+    syncCheckoutPlaceOrderState();
   });
 
 })();
@@ -1012,16 +1139,21 @@
       .replace(/"/g, "&quot;");
   }
 
+  function hasToken(input, token){
+    var pattern = new RegExp("(^|[\\s._-])" + token + "([\\s._-]|$)");
+    return pattern.test(input);
+  }
+
   function detectBrand(fileLower){
     if(fileLower.indexOf("iphone") !== -1 || fileLower.indexOf("apple") !== -1 || fileLower.indexOf("macbook") !== -1) return "apple";
     if(fileLower.indexOf("samsung") !== -1) return "samsung";
-    if(fileLower.indexOf("vivo") !== -1) return "vivo";
+    if(fileLower.indexOf("asus") !== -1 || fileLower.indexOf("zenbook") !== -1 || fileLower.indexOf("vivobook") !== -1) return "asus";
+    if(hasToken(fileLower, "vivo")) return "vivo";
     if(fileLower.indexOf("xaomi") !== -1 || fileLower.indexOf("xiaomi") !== -1) return "xiaomi";
     if(fileLower.indexOf("realme") !== -1) return "realme";
-    if(fileLower.indexOf("asus") !== -1 || fileLower.indexOf("zenbook") !== -1) return "asus";
-    if(fileLower.indexOf("pavilion") !== -1 || fileLower.indexOf(" hp") !== -1 || fileLower.indexOf("hp ") !== -1 || fileLower.indexOf("hp.") !== -1 || fileLower.indexOf("hp-") !== -1 || fileLower.indexOf("hp_") !== -1 || fileLower.indexOf("hp") === 0) return "hp";
+    if(fileLower.indexOf("pavilion") !== -1 || fileLower.indexOf("paviloin") !== -1 || hasToken(fileLower, "hp")) return "hp";
     if(fileLower.indexOf("xs9320") !== -1 || fileLower.indexOf("dell") !== -1 || fileLower.indexOf("xps") !== -1) return "dell";
-    if(fileLower.indexOf("sony") !== -1 || fileLower.indexOf("playstation") !== -1 || fileLower.indexOf("x-box") !== -1) return "sony";
+    if(fileLower.indexOf("sony") !== -1 || fileLower.indexOf("playstation") !== -1 || fileLower.indexOf("x-box") !== -1 || fileLower.indexOf("xbox") !== -1) return "sony";
     if(fileLower.indexOf("boat") !== -1) return "boat";
     if(fileLower.indexOf("noise") !== -1) return "noise";
     if(fileLower.indexOf("jbl") !== -1) return "jbl";
@@ -1034,9 +1166,26 @@
   function detectCategory(fileLower){
     if(fileLower.indexOf("watch") !== -1) return "wearables";
     if(fileLower.indexOf("audio") !== -1 || fileLower.indexOf("earpod") !== -1 || fileLower.indexOf("headphone") !== -1) return "audio";
-    if(fileLower.indexOf("gaming") !== -1 || fileLower.indexOf("playstation") !== -1 || fileLower.indexOf("x-box") !== -1) return "gaming";
+    if(
+      fileLower.indexOf("gaming") !== -1 ||
+      fileLower.indexOf("gam9ing") !== -1 ||
+      fileLower.indexOf("gam1ng") !== -1 ||
+      fileLower.indexOf("playstation") !== -1 ||
+      fileLower.indexOf("x-box") !== -1 ||
+      fileLower.indexOf("xbox") !== -1
+    ) return "gaming";
     if(fileLower.indexOf("smart-home") !== -1 || fileLower.indexOf("bulb") !== -1) return "smarthome";
-    if(fileLower.indexOf("laptop") !== -1 || fileLower.indexOf("macbook") !== -1 || fileLower.indexOf("zenbook") !== -1 || fileLower.indexOf("pavilion") !== -1 || fileLower.indexOf("xs9320") !== -1 || fileLower.indexOf("nb") !== -1) return "laptops";
+    if(
+      fileLower.indexOf("laptop") !== -1 ||
+      fileLower.indexOf("macbook") !== -1 ||
+      fileLower.indexOf("zenbook") !== -1 ||
+      fileLower.indexOf("vivobook") !== -1 ||
+      fileLower.indexOf("pavilion") !== -1 ||
+      fileLower.indexOf("paviloin") !== -1 ||
+      fileLower.indexOf("xs9320") !== -1 ||
+      fileLower.indexOf("cnb") !== -1 ||
+      hasToken(fileLower, "nb")
+    ) return "laptops";
     return "smartphones";
   }
 
@@ -1088,7 +1237,7 @@
     var fullName = getReadableName(fileName, brandLabel);
     var price = getPrice(category, fileLower + "|" + order);
     var rating = getRating(fileLower + "|" + order);
-    var detailTarget = detailByBrand[brand] || "apple-iphone14-pro-max";
+    var detailTarget = detailByBrand[brand] || toTitleCase(brand);
     var productId = slugify(brand + "-" + fileName + "-" + order);
 
     return {
